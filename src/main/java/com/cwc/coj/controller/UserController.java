@@ -40,8 +40,6 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 用户接口
  *
- * @author <a href="https://github.com/licwc">程序员鱼皮</a>
- * @from <a href="https://cwc.icu">编程导航知识星球</a>
  */
 @RestController
 @RequestMapping("/user")
@@ -148,6 +146,12 @@ public class UserController {
         return ResultUtils.success(userService.getLoginUserVO(user));
     }
 
+    @GetMapping("/gget")
+    public BaseResponse<User> gget(){
+        User user = userService.query().eq("id", "1709255728969449473").one();
+        return ResultUtils.success(user);
+    }
+
     // endregion
 
     // region 增删改查
@@ -227,6 +231,8 @@ public class UserController {
         ThrowUtils.throwIf(user == null, ErrorCode.NOT_FOUND_ERROR);
         return ResultUtils.success(user);
     }
+
+
 
     /**
      * 根据 id 获取包装类

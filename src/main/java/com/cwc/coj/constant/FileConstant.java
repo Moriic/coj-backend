@@ -3,8 +3,6 @@ package com.cwc.coj.constant;
 /**
  * 文件常量
  *
- * @author <a href="https://github.com/licwc">程序员鱼皮</a>
- * @from <a href="https://cwc.icu">编程导航知识星球</a>
  */
 public interface FileConstant {
 
